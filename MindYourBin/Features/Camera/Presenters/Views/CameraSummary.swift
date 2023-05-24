@@ -56,7 +56,7 @@ struct CameraSummary: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
-                        
+                        capturedImage = nil
                     } label: {
                         Text("Retake")
                             .foregroundColor(Color.yellow)

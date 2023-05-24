@@ -10,6 +10,7 @@ import SwiftUI
 struct SummaryView2: View {
     
     @Binding var detectedTrash: String
+    @State private var nonOrganic: [String] = ["plastic", "metal", "glass"]
     
     var body: some View {
         NavigationView{
@@ -32,16 +33,29 @@ struct SummaryView2: View {
                         }
                     }
                     ScrollView{
-                        Image(uiImage: imageTrash!)
-                            .resizable()
-                            .scaledToFit()
+                        if nonOrganic.contains(detectedTrash){
+                            Image("Not Recyclable")
+                                .resizable()
+                                .scaledToFit()
+                        } else {
+                            Image("Recyclable")
+                                .resizable()
+                                .scaledToFit()
+                        }
                         HStack{
-                            Text("The detected trash is: ")
+                            Text("The trash is classified as: ")
                                 .foregroundColor(.white)
                                 .font(.system(size: 21))
-                            Text("\(detectedTrash.capitalized)")
-                                .foregroundColor(.white)
-                                .font(.system(size: 21))
+                            if nonOrganic.contains(detectedTrash){
+                                Text("Non Recyclable")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 21))
+                            }
+                            else {
+                                Text("Recyclable")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 21))
+                            }
                         }.padding([.top, .bottom], 20)
                         Text("")
                         Spacer()
