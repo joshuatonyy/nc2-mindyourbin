@@ -42,7 +42,7 @@ struct SummaryView2: View {
                                 .resizable()
                                 .scaledToFit()
                         }
-                        HStack{
+                        VStack{
                             Text("The trash is classified as: ")
                                 .foregroundColor(.white)
                                 .font(.system(size: 21))
