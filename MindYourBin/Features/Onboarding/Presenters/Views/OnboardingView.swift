@@ -13,10 +13,10 @@ struct OnboardingView: View {
             ZStack{
                 Color.black.ignoresSafeArea()
                 VStack{
-                    Image("clover sidebar")
+                    Image("Mind Your Bin-3")
                         .frame(width: 100, height: 150)
-                        .padding(.bottom, 30)
-                    Text("Welcome to MindYourBin")
+                        .padding(.bottom, 90)
+                    Text("Welcome to Mind Your Bin")
                         .font(.system(size: 32))
                         .foregroundColor(Color.white)
                     Text("Please mind that the app can detect your trash into either: metal, plastic, glass, cardboard, or paper")
